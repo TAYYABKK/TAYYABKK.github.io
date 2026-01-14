@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tayyab | AI & Automation</title>
+    <style>
+        body { background: #0a0a0a; color: #00ff41; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .terminal { width: 90%; max-width: 900px; background: #000; padding: 40px; border: 1px solid #00ff41; box-shadow: 0 0 30px rgba(0, 255, 65, 0.1); border-radius: 5px; position: relative; }
+        .header { position: absolute; top: 0; left: 0; width: 100%; background: #222; color: #bbb; padding: 5px 0; text-align: center; font-size: 12px; border-bottom: 1px solid #333; }
+        .command { color: #fff; font-weight: bold; }
+        .cursor { display: inline-block; width: 10px; height: 18px; background: #00ff41; animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 50% { opacity: 0; } }
+        #output { line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="header">tayyab_terminal — 80x24</div>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const lines = [
+            "tayyab@wsl:~$ whoami",
+            "Tayyab - Developer | Python Expert | NLP Specialist",
+            "tayyab@wsl:~$ python3 --version",
+            "Python 3.10.12 (Automation Engine Active)",
+            "tayyab@wsl:~$ cat skills.py",
+            "skills = {",
+            "    'automation': ['Python', 'Selenium', 'Bash Scripts'],",
+            "    'NLP': ['NLTK', 'Transformers', 'Sentiment Analysis'],",
+            "    'DevOps': ['WSL2', 'Git', 'Linux Administration']",
+            "}",
+            "tayyab@wsl:~$ _"
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+        const output = document.getElementById('output');
+
+        function type() {
+            if (lineIndex < lines.length) {
+                let currentLine = lines[lineIndex];
+                if (charIndex < currentLine.length) {
+                    // Check if it's a command line to style it
+                    if (charIndex === 0 && currentLine.startsWith("tayyab@wsl")) {
+                        output.innerHTML += '<span class="command">' + currentLine.charAt(charIndex);
+                    } else {
+                        output.innerHTML += currentLine.charAt(charIndex);
+                    }
+                    charIndex++;
+                    setTimeout(type, 30);
+                } else {
+                    output.innerHTML += '<br>';
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(type, 500);
+                }
+            }
+        }
+        type();
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tayyab | AI & Automation</title>
+    <style>
+        body { background: #0a0a0a; color: #00ff41; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .terminal { width: 90%; max-width: 900px; background: #000; padding: 40px; border: 1px solid #00ff41; box-shadow: 0 0 30px rgba(0, 255, 65, 0.1); border-radius: 5px; position: relative; }
+        .header { position: absolute; top: 0; left: 0; width: 100%; background: #222; color: #bbb; padding: 5px 0; text-align: center; font-size: 12px; border-bottom: 1px solid #333; }
+        .command { color: #fff; font-weight: bold; }
+        .cursor { display: inline-block; width: 10px; height: 18px; background: #00ff41; animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 50% { opacity: 0; } }
+        #output { line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="header">tayyab_terminal — 80x24</div>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const lines = [
+            "tayyab@wsl:~$ whoami",
+            "Tayyab - Developer | Python Expert | NLP Specialist",
+            "tayyab@wsl:~$ python3 --version",
+            "Python 3.10.12 (Automation Engine Active)",
+            "tayyab@wsl:~$ cat skills.py",
+            "skills = {",
+            "    'automation': ['Python', 'Selenium', 'Bash Scripts'],",
+            "    'NLP': ['NLTK', 'Transformers', 'Sentiment Analysis'],",
+            "    'DevOps': ['WSL2', 'Git', 'Linux Administration']",
+            "}",
+            "tayyab@wsl:~$ _"
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+        const output = document.getElementById('output');
+
+        function type() {
+            if (lineIndex < lines.length) {
+                let currentLine = lines[lineIndex];
+                if (charIndex < currentLine.length) {
+                    // Check if it's a command line to style it
+                    if (charIndex === 0 && currentLine.startsWith("tayyab@wsl")) {
+                        output.innerHTML += '<span class="command">' + currentLine.charAt(charIndex);
+                    } else {
+                        output.innerHTML += currentLine.charAt(charIndex);
+                    }
+                    charIndex++;
+                    setTimeout(type, 30);
+                } else {
+                    output.innerHTML += '<br>';
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(type, 500);
+                }
+            }
+        }
+        type();
+    </script>
+</body>
+</html>
